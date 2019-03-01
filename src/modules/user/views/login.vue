@@ -41,6 +41,7 @@
     startAnimation
   } from './loginAni'
   import "../styles//login.scss";
+  import actions from "../store/actions";
   export default {
     name: 'Login',
     data() {
@@ -72,13 +73,7 @@
         this.$refs[formName].validate(valid => {
           if (valid) {
             this.isLoginning = true
-            this.$store.dispatch('userLogin', {
-              ...this.loginForm
-            }).then(() => {
-              this.$router.push('/dash')
-            }).finally(() => {
-              this.isLoginning = false
-            })
+           actions.userLogin("222","444").then()
           } else {
             return false
           }
