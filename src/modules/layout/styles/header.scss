@@ -1,0 +1,17 @@
+.header {
+  display: flex;
+  padding: 0;
+  background-color: #e5e5e5;
+  border-bottom: 1px solid #d9d9d9;
+  justify-content: flex-end;
+  height: 35px;
+
+  .user {
+    margin-right: 16px;
+
+    ul {
+      list-style-type: none;
+    }
+
+  }
+}
