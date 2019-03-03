@@ -5,7 +5,7 @@
   "author": "hna <april1984417@163.com>",
   "private": true,
   "scripts": {
-    "dev": "webpack-dev-server --open --inline --progress --profile --config build/webpack.dev.conf.js",
+    "dev": "webpack-dev-server --inline --progress --profile --config build/webpack.dev.conf.js",
     "start": "npm run dev",
     "lint": "eslint --ext .js,.vue src",
     "build": "node build/build.js",
@@ -76,7 +76,13 @@
     "webpack": "^3.6.0",
     "webpack-bundle-analyzer": "^2.9.0",
     "webpack-dev-server": "^2.9.1",
-    "webpack-merge": "^4.1.0"
+    "webpack-merge": "^4.1.0",
+    "typescript": "^3.1.4",
+    "ts-loader": "^3.5.0",
+    "tslint": "^5.11.0",
+    "tslint-loader": "^3.5.4",
+    "tslint-config-standard": "^8.0.1",
+    "vue-property-decorator": "^7.2.0"
   },
   "engines": {
     "node": ">= 6.0.0",

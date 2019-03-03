@@ -1,16 +1,19 @@
 import api from "../../../utils/api/index";
 
 const actions = {
-  userLogin(userName, passWord) {
-    return api.post("/user/login", {
-      params: {
-        userName,
-        passWord
-      }
-    }).then(success => {
-      commit("SAVE_UERINFO", success)
-    }).catch(error => {
-
+  userLogin({ commit, state }, params) {
+    // commit("SAVE_UERINFO", { userName: "登录失败" })
+    return new Promise((resolve, reject) => {
+      console.log(api,"api")
+      // axios.get("/users/1?_embed=routers")
+      api.get("/users/1?_embed=routers").then(success => {
+        resolve(success)
+        commit("SAVE_UERINFO", success)
+      }).catch(error => {
+        reject(error)
+        console.log(error, state, "actionerror")
+        commit("SAVE_UERINFO", { userName: "登录失败" })
+      })
     })
   }
 }

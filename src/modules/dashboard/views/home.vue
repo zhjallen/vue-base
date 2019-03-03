@@ -1,8 +1,9 @@
 <template>
-  <div>About Us</div>
+  <div>shouy44444e</div>
 </template>
 <script>
 export default {
-  name: 'AboutUs'
-}
+  name: "Home"
+};
 </script>
+

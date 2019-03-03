@@ -12,10 +12,9 @@ const user = {
   },
 
   mutations: {
-    // 设置侧边栏折叠
     // 保存用户信息
     SAVE_UERINFO(state, userInfo) {
-      state.user.userInfo = userInfo;
+      state.userInfo = userInfo;
     }
   },
 }

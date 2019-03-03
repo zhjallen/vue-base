@@ -8,10 +8,11 @@ const methods = [
   "patch"
 ]
 axios.defaults.timeout = 5000;
-process.env.NODE_ENV === "development" ? axios.defaults.baseURL = "/api" :
-  process.env.NODE_ENV === "test" ? axios.defaults.baseURL = "http://ims.dev.zjjc.com" :
-  process.env.NODE_ENV === "production" ? axios.defaults.baseURL = "http://ims.zhujianjc.com:81" :
-  axios.defaults.baseURL = ""
+let baseURL="";
+process.env.NODE_ENV === "development" ? baseURL = "/api" :
+  process.env.NODE_ENV === "test" ? baseURL = "http://ims.dev.zjjc.com" :
+  process.env.NODE_ENV === "production" ? baseURL = "http://ims.zhujianjc.com:81" :
+  baseURL = ""
 class Api {
   constructor(opts) {
     this.opts = opts || {
@@ -23,6 +24,7 @@ class Api {
         data
       } = {}) => new Promise((resolve, reject) => {
         const url = baseURL + path;
+        console.log(url,"url",method,params,data)
         return axios({
           method,
           url,
@@ -43,9 +45,10 @@ class Api {
     });
   }
 }
-export default api = new Api({
+const api = new Api({
   headers: {
     Accept: "application/json",
     "content-type": "application/json"
   }
 })
+export default api;

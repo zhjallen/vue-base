@@ -1,12 +1,13 @@
 <template>
   <div class="layout">
-    <sidebar />
+ <sidebar />
     <div class="main-content" v-bind:style="{width:`calc(100% - ${sidebarState.width})`}">
       <headers />
       <tag-tabs />
-      <!-- <app-main class="main-wrapper" id="mainWrapper"></app-main> -->
+      <app-main class="main-wrapper" id="mainWrapper"></app-main>
      
     </div>
+    
   </div>
 </template>
 
@@ -14,7 +15,7 @@
    import headers from '../components/header'
   import sidebar from '../components/sidebar'
   import tagTabs from '../components/tagTabs'
-  // import appMain from './Components/main'
+  import appMain from  "../components/main.vue"
 
   import {
     mapGetters
@@ -26,7 +27,7 @@
       headers,
       sidebar,
       tagTabs,
-      // appMain
+      appMain
     },
     computed: {
       ...mapGetters(['sidebarState', 'windowMaxState'])

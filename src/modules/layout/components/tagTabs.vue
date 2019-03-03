@@ -14,7 +14,7 @@
         <span v-if="isShowCloseBtn(tab)" class="close el-icon-close" @click.prevent.stop="closeTab(tab)"></span>
       </router-link>
     </scroll-pane>
-    <el-button @click="addTag">增加标签</el-button>
+    <!-- <el-button @click="addTag">增加标签</el-button> -->
   </div>
 </template>
 
